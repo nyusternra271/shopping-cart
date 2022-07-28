@@ -38,5 +38,23 @@ def to_usd(my_price):
 
 
 # TODO: write some Python code here to produce the desired output
+item_ids = [str(product['id'])for product in products]
 
-print(products)
+
+#print(products)
+
+selections = []
+
+item=''
+
+print('Enter shopping cart items, 1 at a time, entering DONE when finished')
+while item.lower() != 'done':
+    item=input('Please input a product: ')
+    if item in item_ids:
+        print(item)
+    if (item.lower() != 'done') and (item not in item_ids):
+        print("Hey, are you sure that product identifier is correct? Please try again:")
+    elif item.lower() != 'done':
+     selections.append(item)
+
+print(selections)
