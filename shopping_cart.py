@@ -54,5 +54,18 @@ while item.lower() != 'done':
         print("Hey, are you sure that product identifier is correct? Please try again:")
     elif item.lower() != 'done':
      selections.append(item)
+print("-------------------------")
+print("WALMART")
+print("https://walmart.com")
+print("-------------------------")
 
+# The following code was adapted from these webpages:
+# 1. https://www.programiz.com/python-programming/datetime/current-datetime
+# 2.  https://stackoverflow.com/questions/1759455/how-can-i-account-for-period-am-pm-using-strftime
+
+from datetime import datetime
+now = datetime.now()
+
+dt_string=now.strftime("%Y/%m/%d %I:%M %p")
+print("CHECKOUT AT:", dt_string)
 print(selections)
