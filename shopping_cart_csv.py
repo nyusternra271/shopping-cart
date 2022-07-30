@@ -1,4 +1,10 @@
 # shopping_cart.py
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
 from pandas import read_csv
 
 products_df = read_csv('products.csv')
@@ -62,7 +68,7 @@ for selection in selections:
             subtotal += product['price']
 print("-------------------------")
 
-tax_rate = 0.0875
+tax_rate = float(os.getenv("TAX_RATE"))
 print('SUBTOTAL:', to_usd(subtotal))
 print('TAX:', to_usd(tax_rate*subtotal))
 total = subtotal * (1+tax_rate)
