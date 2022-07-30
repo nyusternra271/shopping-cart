@@ -23,6 +23,11 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
+store = {
+        "name": "Super Cheap Number 1 Grocery Store",
+        "phone": "123-456-7890",
+        "website": "https://www.stern.nyu.edu"
+}
 
 def to_usd(my_price):
     """
@@ -44,7 +49,6 @@ item_ids = [str(product['id']) for product in products]
 #print(products)
 
 selections = []
-
 item=''
 
 print('Enter shopping cart items, 1 at a time, entering DONE when finished')
@@ -55,8 +59,7 @@ while item.lower() != 'done':
     elif item.lower() != 'done':
      selections.append(item)
 print("-------------------------")
-print("WALMART")
-print("https://walmart.com")
+print(store['name']+ "\n"+store['phone']+ "\n" + store['website'])
 print("-------------------------")
 
 # The following code was adapted from these webpages:
