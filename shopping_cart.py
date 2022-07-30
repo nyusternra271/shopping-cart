@@ -68,4 +68,23 @@ now = datetime.now()
 
 dt_string=now.strftime("%Y/%m/%d %I:%M %p")
 print("CHECKOUT AT:", dt_string)
-print(selections)
+
+
+subtotal = 0.00
+
+for selection in selections:
+    for product in products:
+        if str(product['id']) == selection:
+            print(product['name'], to_usd(product['price']))
+            subtotal += product['price']
+print("-------------------------")
+
+tax_rate = 0.0875
+print('SUBTOTAL:', subtotal)
+print('TAX:', to_usd(tax_rate*subtotal))
+total = subtotal * (1+tax_rate)
+print('TOTAL:', to_usd(total))
+
+print("-------------------------")
+print("THANKS, SEE YOU AGAIN SOON!")
+print("-------------------------")
