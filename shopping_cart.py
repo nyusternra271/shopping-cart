@@ -80,7 +80,7 @@ for selection in selections:
 print("-------------------------")
 
 tax_rate = 0.0875
-print('SUBTOTAL:', subtotal)
+print('SUBTOTAL:', to_usd(subtotal))
 print('TAX:', to_usd(tax_rate*subtotal))
 total = subtotal * (1+tax_rate)
 print('TOTAL:', to_usd(total))
