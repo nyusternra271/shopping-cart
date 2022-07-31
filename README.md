@@ -8,7 +8,12 @@ you've selected.
 
 ## Requirements:
 
-1. Install the pandas and dotenv packages by running the following command:
+1. Create a new environment for running this program as follows:
+
+```sh
+conda create -n shopping-cart python=3.10
+
+2. Install the pandas and dotenv packages by running the following command:
 
 ```sh
 pip install -r requirements.txt
