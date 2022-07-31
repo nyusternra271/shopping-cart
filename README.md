@@ -1,7 +1,12 @@
 # shopping-caart
 Shopping Cart Project
 
-Requirements:
+## Introduction
+
+This application prompts you to select from a group of products and presents a receipt for all of the goods
+you've selected.
+
+## Requirements:
 
 1. Install the pandas and dotenv packages by running the following command:
 
