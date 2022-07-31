@@ -12,13 +12,13 @@ you've selected.
 
 ```sh
 conda create -n shopping-cart python=3.10
-
+```
 2. Install the pandas and dotenv packages by running the following command:
 
 ```sh
 pip install -r requirements.txt
-
-2. Set up your own .env file that contains the tax rate for your locale:
+```
+3. Set up your own .env file that contains the tax rate for your locale:
 
 ```sh
 TAX_RATE = 0.0875
