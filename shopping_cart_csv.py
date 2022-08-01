@@ -60,6 +60,11 @@ print("CHECKOUT AT:", dt_string)
 
 
 subtotal = 0.00
+email_receipt_dict = { "total_price_usd": "",
+                       "store_name": store['name'],
+                       "store_website": store['website'],
+                       "store_phone_number": store['phone']
+}
 
 for selection in selections:
     for product in products:
@@ -77,3 +82,9 @@ print('TOTAL:', to_usd(total))
 print("-------------------------")
 print("THANKS, SEE YOU AGAIN SOON!")
 print("-------------------------")
+template_data = {
+    "total_price_usd": to_usd(total),
+    "human_friendly_timestamp": dt_string,
+    "products": []
+}
+
