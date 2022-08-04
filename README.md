@@ -1,5 +1,4 @@
-# shopping-caart
-Shopping Cart Project
+# Shopping Cart Project
 
 ## Introduction
 
