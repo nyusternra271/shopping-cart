@@ -13,10 +13,11 @@ SENDER_ADDRESS = os.getenv("SENDER_ADDRESS", default="OOPS, please set env var c
 client = SendGridAPIClient(SENDGRID_API_KEY)
 from pandas import read_csv
 
-products_df = read_csv('products.csv')
+csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
+products_df = read_csv(csv_filepath)
 products = products_df.to_dict('records')
 store = {
-        "name": "Super Cheap Number 1 Grocery Store",
+        "name": "No 1 Super Value Grocery Store",
         "phone": "123-456-7890",
         "website": "https://www.stern.nyu.edu"
 }
