@@ -113,4 +113,4 @@ The user should see something like the following after entering a few selections
 
 If the user opts to receive a copy of the receipt via email, they'll be prompted to enter their email address. After doing so, they should see the following if the message was sent successfully:
 
-![Successful Email Sending Screenshot](https:/github.com/nyusternra271/miscellaneous/blob/main/screenshot-3.png)
+![Successful Email Sending Screenshot](https://github.com/nyusternra271/miscellaneous/blob/main/screenshot-3.png)
