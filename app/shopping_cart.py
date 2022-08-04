@@ -57,11 +57,12 @@ print("-------------------------")
 # The following code was adapted from these webpages:
 # 1. https://www.programiz.com/python-programming/datetime/current-datetime
 # 2.  https://stackoverflow.com/questions/1759455/how-can-i-account-for-period-am-pm-using-strftime
+# 3. https://www.programiz.com/python-programming/datetime/strftime
 
 from datetime import datetime
 now = datetime.now()
 
-dt_string=now.strftime("%Y/%m/%d %I:%M %p")
+dt_string=now.strftime("%A %D %I:%M %p")
 print("CHECKOUT AT:", dt_string)
 
 
@@ -104,10 +105,10 @@ template_data = {
     "products": my_list
 }
 
-email_option = input("Would you like a copy of your receipt sent to you via email?")
+email_option = input("Would you like a copy of your receipt sent to you via email? ")
 
 if email_option.lower() == "yes":
-    recipient_address = input("Please enter your email address:")
+    recipient_address = input("Please enter your email address: ")
     message = Mail(from_email=SENDER_ADDRESS, to_emails=recipient_address)
     message.template_id = SENDGRID_TEMPLATE_ID
     message.dynamic_template_data = template_data
@@ -123,5 +124,7 @@ if email_option.lower() == "yes":
     print("-------------------------")
     print("THANKS, SEE YOU AGAIN SOON!")
 else:
+    print("-------------------------")
     print("THANKS, SEE YOU AGAIN SOON")
+
 print("-------------------------")
