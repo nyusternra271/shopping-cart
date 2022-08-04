@@ -71,11 +71,6 @@ print("CHECKOUT AT:", dt_string)
 
 
 subtotal = 0.00
-email_receipt_dict = { "total_price_usd": "",
-                       "store_name": store['name'],
-                       "store_website": store['website'],
-                       "store_phone_number": store['phone']
-}
 
 selection_dict = {}
 my_list = []
