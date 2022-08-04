@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ```sh
 TAX_RATE = 0.0875
-
+```
 modify the value of the TAX_RATE variable as needed
 
 4. Create your products.csv file inside the data directory. The file structure should resemble the following:
