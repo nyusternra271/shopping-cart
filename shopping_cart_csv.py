@@ -66,11 +66,19 @@ email_receipt_dict = { "total_price_usd": "",
                        "store_phone_number": store['phone']
 }
 
+selection_dict = {}
+my_list = []
 for selection in selections:
     for product in products:
         if str(product['id']) == selection:
             print(product['name'], to_usd(product['price']))
             subtotal += product['price']
+            selection_dict['id'] = int(selection)
+            # referenced this page with respect to appending to a list of dictionaries:
+            #  https://www.askpython.com/python/list/list-of-dictionaries
+            selection_dict['name'] = product['name']
+            # got the idea to use the copy method from this page: https://www.geeksforgeeks.org/appending-a-dictionary-to-a-list-in-python/
+            my_list.append(selection_dict.copy()) 
 print("-------------------------")
 
 tax_rate = float(os.getenv("TAX_RATE"))
@@ -80,11 +88,22 @@ total = subtotal * (1+tax_rate)
 print('TOTAL:', to_usd(total))
 
 print("-------------------------")
-print("THANKS, SEE YOU AGAIN SOON!")
-print("-------------------------")
+
 template_data = {
     "total_price_usd": to_usd(total),
+    "store_name": store['name'],
+    "store_website": store['website'],
+    "store_phone_number": store['phone'],
     "human_friendly_timestamp": dt_string,
-    "products": []
+    "products": my_list
 }
 
+email_option = input("Would you like a copy of your receipt sent to you via email?")
+
+if email_option.lower() == "yes":
+    recipient_address = input("Please enter your email address:")
+    print("-------------------------")
+    print("THANKS, SEE YOU AGAIN SOON!")
+else:
+    print("THANKS, SEE YOU AGAIN SOON")
+print("-------------------------")
