@@ -66,7 +66,7 @@ modify the value of the TAX_RATE variable as needed
         </p>
         ```
 
-
+    4. Finally, configure the template's subject by clicking on "Settings" in the left sidebar. Choose an email subject like "Your Receipt from the Super Duper Grocery Store". Then click "Save Template".
 
 
 5. Create your products.csv file inside the data directory. The file structure should resemble the following:
