@@ -13,6 +13,9 @@ SENDER_ADDRESS = os.getenv("SENDER_ADDRESS", default="OOPS, please set env var c
 client = SendGridAPIClient(SENDGRID_API_KEY)
 from pandas import read_csv
 
+# This usage of the os.path.join method was taken from Prof. Rossetti's documentation here:
+# https://github.com/prof-rossetti/intro-to-python/blob/main/projects/shopping-cart/challenges.md
+
 csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
 products_df = read_csv(csv_filepath)
 products = products_df.to_dict('records')
