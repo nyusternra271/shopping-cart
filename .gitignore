@@ -130,3 +130,5 @@ dmypy.json
 
 sendgrid_test.py
 sendgrid_test2.py
+
+data/products.csv
