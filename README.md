@@ -33,7 +33,7 @@ SENDGRID_TEMPLATE_ID="Your SendGrid template ID here"
 ```
 modify the value of the TAX_RATE variable as needed
 
-3. Sign up for a Sendgrid account so that you can create a template and API key that will be used for sending the receipt via email:
+4. Sign up for a Sendgrid account so that you can create a template and API key that will be used for sending the receipt via email:
     1. Go to https://signup.sendgrid.com and register using an email address of your choosing (using a Gmail account is recommended due to possible issues with school or employer email domains)
     2. Follow the instructions to complete the "Single Sender Verification" by clicking the link in the confirmation email you received (remember to check your spam folder if you don't see this email in a timely fashion). You can also access this utility via the Settings menu (Settings->Sender Authentication) from your dashboard after logging in.
     3. Set up a template by navigating to https://sendgrid.com/dynamic_templates or through the Email API menu (Email API->Dynamic Templates) from your dashboard:
@@ -69,7 +69,7 @@ modify the value of the TAX_RATE variable as needed
 
 
 
-4. Create your products.csv file inside the data directory. The file structure should resemble the following:
+5. Create your products.csv file inside the data directory. The file structure should resemble the following:
 ```sh
 id,name,aisle,department,price
 1,Chocolate Sandwich Cookies,cookies cakes,snacks,3.5
