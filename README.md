@@ -12,11 +12,6 @@ This application prompts you to select from a group of products and displays the
 ```sh
 conda create -n shopping-cart python=3.10
 ```
-2. Activate the newly created environment:
-```sh
-conda activate shopping-cart
-```
-
 2. Install the pandas, dotenv and sendgrid packages by running the following command:
 
 ```sh
@@ -97,4 +92,17 @@ id,name,aisle,department,price
 
 ## Running This App
 
-After downloading this repo, you\'ll need to
+After downloading this repo, you can run it as follows:
+
+1. Browse to the directory where you saved all of the files.
+2. Activate the conda environment you created earlier:
+```sh
+conda activate shopping-cart
+```
+3. Run the program:
+```sh
+python -m app.shopping_cart
+```
+
+If all is set up properly, you should see the following:
+![Initial Sxcreenshot When Running the App](https://pages.stern.nyu.edu/~rahmad/python-u22/screenshot-1.png)
