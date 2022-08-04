@@ -105,4 +105,4 @@ python -m app.shopping_cart
 ```
 
 If all is set up properly, you should see the following:
-![Initial Sxcreenshot When Running the App](https://github.com/nyusternra271/miscellaneous/screenshot-1.png)
+![Initial Sxcreenshot When Running the App](https://github.com/nyusternra271/miscellaneous/blob/main/screenshot-1.png)
