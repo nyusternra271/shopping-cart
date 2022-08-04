@@ -38,7 +38,8 @@ def to_usd(my_price):
     return f"${my_price:,.2f}" #> $12,000.71
 
 
-# TODO: write some Python code here to produce the desired output
+# Use list compression to create a list of product IDs
+# for validation a few lines below
 item_ids = [str(product['id']) for product in products]
 
 
@@ -74,9 +75,13 @@ subtotal = 0.00
 
 selection_dict = {}
 my_list = []
+# Loop through the 
 for selection in selections:
     for product in products:
-        if str(product['id']) == selection:
+        # we have to convert either product['id'] to a string
+        # or selection to an int for this comparison to work.
+
+        if product['id'] == int(selection):
             print(product['name'], to_usd(product['price']))
             subtotal += product['price']
             selection_dict['id'] = int(selection)
@@ -87,6 +92,9 @@ for selection in selections:
             my_list.append(selection_dict.copy()) 
 print("-------------------------")
 
+# TAX_RATE comes in as a string and needs to be converted to
+# the float type for calculating the final price
+# otherwise an error is generated
 tax_rate = float(os.getenv("TAX_RATE"))
 print('SUBTOTAL:', to_usd(subtotal))
 print('TAX:', to_usd(tax_rate*subtotal))
@@ -95,6 +103,9 @@ print('TOTAL:', to_usd(total))
 
 print("-------------------------")
 
+# this is the dictionary that we need to create in order to
+# use the SendGrid template to send a copy of the receipt
+# via email
 template_data = {
     "total_price_usd": to_usd(total),
     "store_name": store['name'],
@@ -104,9 +115,13 @@ template_data = {
     "products": my_list
 }
 
+# Give the user the option to send a copy of the receipt via email
+# or not
 email_option = input("Would you like a copy of your receipt sent to you via email? ")
 
 if email_option.lower() == "yes":
+    # With additional time, we could add a check to ensure that
+    # the format of the email address that is entered is valid
     recipient_address = input("Please enter your email address: ")
     message = Mail(from_email=SENDER_ADDRESS, to_emails=recipient_address)
     message.template_id = SENDGRID_TEMPLATE_ID
